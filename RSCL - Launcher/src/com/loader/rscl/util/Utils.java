@@ -61,7 +61,7 @@ public class Utils
     
     public static String getServerTime() {
         if (Utils.df == null) {
-            (Utils.df = new SimpleDateFormat("h:mm:ss a")).setTimeZone(TimeZone.getTimeZone("America/Chicago"));
+            (Utils.df = new SimpleDateFormat("h:mm:ss a")).setTimeZone(TimeZone.getTimeZone("America/New_York"));
         }
         return Utils.df.format(new Date());
     }

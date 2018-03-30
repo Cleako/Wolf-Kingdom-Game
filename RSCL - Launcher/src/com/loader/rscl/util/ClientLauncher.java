@@ -33,7 +33,7 @@ public class ClientLauncher
 		final Applet applet = Applet.class.cast(mainClass.getConstructor()
 				.newInstance());
 		AppFrame.get().dispose();
-		JFrame gameFrame = new JFrame("RSCLegacy");
+		JFrame gameFrame = new JFrame("Wolf Kingdom");
 		gameFrame.setIconImage(Utils.getImage("RuneScape.png").getImage());
 		gameFrame.setMinimumSize(new Dimension(512 + 16, 334 + 49));
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

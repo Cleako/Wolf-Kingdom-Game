@@ -34,7 +34,7 @@ public class AppFrame extends JFrame
     public AppFrame() {
         this.setPreferredSize(new Dimension(980, 560));
         this.setUndecorated(true);
-        this.setTitle("RSCLegacy");
+        this.setTitle("Wolf Kingdom");
         this.setIconImage(Utils.getImage("icon.png").getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         AppFrame.instance = this;

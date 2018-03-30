@@ -40,7 +40,7 @@ public class ConnectHttps
             }
         };
         HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-        final URL url = new URL("https://securewebsite.com");
+        final URL url = new URL("https://wolfkingdom.net");
         final URLConnection con = url.openConnection();
         final Reader reader = new InputStreamReader(con.getInputStream());
         while (true) {

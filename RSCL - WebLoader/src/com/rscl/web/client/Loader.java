@@ -37,7 +37,7 @@ AppletStub {
 			updater.init();
 			updater.doneLoading();
 			this.drawLoadingBar("Fetching client...", 0.0f);
-			AllPermissionsClassLoader classLoader = new AllPermissionsClassLoader(new URL[]{new URL("http://rsclegacy.com/client/client.jar")});
+			AllPermissionsClassLoader classLoader = new AllPermissionsClassLoader(new URL[]{new URL("http://wolfkingdom.net/client/client.jar")});
 			this.drawLoadingBar("Fetching client...", 100.0f);
 			Class<?> mainClass = Class.forName("com.rscl.client.pc.RSCFrame", true, classLoader);
 			this.setLayout(new BorderLayout());

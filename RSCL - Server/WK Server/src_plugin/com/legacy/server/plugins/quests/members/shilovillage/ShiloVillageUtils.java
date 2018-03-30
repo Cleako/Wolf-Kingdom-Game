@@ -183,7 +183,7 @@ public class ShiloVillageUtils implements DropListener, DropExecutiveListener, I
 				p.message("You decide not to drop the Beads of the Dead.");
 			}
 		}
-		if(i.getID() == 976) { // bone beads¨
+		if(i.getID() == 976) { // bone beads
 			message(p, "As the beads hit the floor, they disintegrate into");
 			p.message("puffs of white powder.");
 			removeItem(p, 976, 1);

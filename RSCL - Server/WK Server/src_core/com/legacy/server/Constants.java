@@ -52,7 +52,7 @@ public final class Constants {
 		/**
 		 * the mysql database name
 		 */
-		public static String MYSQL_DB = "rsclegacy";
+		public static String MYSQL_DB = "wolf_kingdom";
 		/**
 		 * the mysql username
 		 */
@@ -60,7 +60,7 @@ public final class Constants {
 		/**
 		 * the mysql password
 		 */
-		public static String MYSQL_PASS = "";
+		public static String MYSQL_PASS = "malware";
 		/**
 		 *  mysql prefix
 		 */
