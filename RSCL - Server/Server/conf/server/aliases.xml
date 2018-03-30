@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<comment>Stores aliases for the XStream engine</comment>
+	
+	<entry key="Point">com.legacy.server.model.Point</entry>
+	<entry key="TelePoint">com.legacy.server.model.TelePoint</entry>
+	
+	<entry key="Shop">com.legacy.server.model.Shop</entry>
+	<entry key="InvItem">com.legacy.server.model.container.Item</entry>
+	
+	<entry key="CerterDef">com.legacy.server.external.CerterDef</entry>
+	<entry key="CertDef">com.legacy.server.external.CertDef</entry>
+
+	<entry key="GameObjectLoc">com.legacy.server.external.GameObjectLoc</entry>
+	<entry key="ItemLoc">com.legacy.server.external.ItemLoc</entry>
+	<entry key="NPCLoc">com.legacy.server.external.NPCLoc</entry>
+	
+	<entry key="TileDef">com.legacy.server.external.TileDef</entry>
+	<entry key="GameObjectDef">com.legacy.server.external.GameObjectDef</entry>
+	<entry key="DoorDef">com.legacy.server.external.DoorDef</entry>
+	<entry key="ItemDef">com.legacy.server.external.ItemDefinition</entry>
+	<entry key="PrayerDef">com.legacy.server.external.PrayerDef</entry>
+	<entry key="SpellDef">com.legacy.server.external.SpellDef</entry>
+	<entry key="NPCDef">com.legacy.server.external.NPCDef</entry>
+	
+	<entry key="ItemCraftingDef">com.legacy.server.external.ItemCraftingDef</entry>
+	<entry key="ItemHerbSecond">com.legacy.server.external.ItemHerbSecond</entry>
+	<entry key="ItemDartTipDef">com.legacy.server.external.ItemDartTipDef</entry>
+	<entry key="ItemGemDef">com.legacy.server.external.ItemGemDef</entry>
+	<entry key="ItemLogCutDef">com.legacy.server.external.ItemLogCutDef</entry>
+	<entry key="ItemBowStringDef">com.legacy.server.external.ItemBowStringDef</entry>
+	<entry key="ItemArrowHeadDef">com.legacy.server.external.ItemArrowHeadDef</entry>
+	<entry key="FiremakingDef">com.legacy.server.external.FiremakingDef</entry>
+	<entry key="ReqOreDef">com.legacy.server.external.ReqOreDef</entry>
+	<entry key="ItemUnIdentHerbDef">com.legacy.server.external.ItemUnIdentHerbDef</entry>
+	<entry key="ItemHerbDef">com.legacy.server.external.ItemHerbDef</entry>
+	<entry key="ItemCookingDef">com.legacy.server.external.ItemCookingDef</entry>
+	<entry key="ItemSmeltingDef">com.legacy.server.external.ItemSmeltingDef</entry>
+	<entry key="ItemSmithingDef">com.legacy.server.external.ItemSmithingDef</entry>
+	<entry key="ObjectMiningDef">com.legacy.server.external.ObjectMiningDef</entry>
+	<entry key="ObjectWoodcuttingDef">com.legacy.server.external.ObjectWoodcuttingDef</entry>
+	<entry key="ObjectFishingDef">com.legacy.server.external.ObjectFishingDef</entry>
+	<entry key="ObjectFishDef">com.legacy.server.external.ObjectFishDef</entry>
+	<entry key="ItemDropDef">com.legacy.server.external.ItemDropDef</entry>
+</properties>

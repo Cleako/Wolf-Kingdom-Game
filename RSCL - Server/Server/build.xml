@@ -1,0 +1,80 @@
+<project default="compile_core" basedir=".">	
+	<property name="src" location="src_core" />
+	<property name="build" location="build" />
+	<property name="lib" location="lib" />
+	<property name="jar" location="core.jar" />
+	
+	<target name="compile_plugins">
+		<delete file="plugins.jar" />
+		<delete dir="buildplugins" />
+		<mkdir dir="buildplugins"/>
+		<javac srcdir="src_plugin" destdir="buildplugins" debug="on" includeantruntime="false">
+		  <classpath>
+			<pathelement location="core.jar" />
+			<pathelement path="${java.class.path}/"/>
+			<pathelement location="${lib}/log4j-api-2.8.jar" />
+			<pathelement location="${lib}/log4j-core-2.8.jar" />
+		  </classpath>
+		</javac>
+		<jar basedir="buildplugins" destfile="plugins.jar" />
+		<delete dir="buildplugins" />
+	</target>
+	
+	<target name="compile_core">
+		<delete file="${jar}" />
+		<delete dir="${build}" />
+		<mkdir dir="${build}"/>
+		<javac srcdir="${src}" destdir="${build}" debug="on" includeantruntime="false">
+		  <classpath>
+			<pathelement location="${lib}/netty-all-4.1.8.Final.jar" />
+			<pathelement location="${lib}/log4j-api-2.8.jar" />
+			<pathelement location="${lib}/log4j-core-2.8.jar" />
+			<pathelement location="${lib}/xpp3_min-1.1.4c.jar" />
+			<pathelement location="${lib}/xpp3-1.1.4c.jar" />
+			<pathelement location="${lib}/xstream-1.4.9.jar"/>
+			<pathelement location="${lib}/mysql-connector-java-5.1.40-bin.jar" />
+			<pathelement path="${java.class.path}/"/>
+		  </classpath>
+		</javac>
+		<jar basedir="${build}" destfile="${jar}" />
+		<delete dir="${build}" />
+	</target>
+	
+	<target name="runserverfree">
+		<java classname="com.legacy.server.Server" fork="true">
+			<arg value="free.conf" />
+			<!--<jvmarg value="-Xms512M" />
+			<jvmarg value="-Xmx8140M" />-->
+			<jvmarg line="-XX:+AggressiveOpts -XX:+UseParallelGC -XX:+UseBiasedLocking -XX:NewSize=64m"/>
+			<classpath>
+				<pathelement location="${lib}/netty-all-4.1.8.Final.jar" />
+				<pathelement location="${lib}/disruptor-3.3.0.jar" />
+				<pathelement location="${lib}/log4j-api-2.8.jar" />
+				<pathelement location="${lib}/log4j-core-2.8.jar" />
+				<pathelement location="${lib}/xpp3_min-1.1.4c.jar" />
+				<pathelement location="${lib}/xpp3-1.1.4c.jar" />
+				<pathelement location="${lib}/xstream-1.4.9.jar"/>
+				<pathelement location="${lib}/mysql-connector-java-5.1.40-bin.jar" />
+				<pathelement path="${jar}/" />
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="runservermembers">
+		<java classname="com.legacy.server.Server" fork="true">
+			<arg value="members.conf" />
+			<jvmarg line="-XX:+AggressiveOpts -XX:+UseParallelGC -XX:+UseBiasedLocking -XX:NewSize=64m"/>
+			<classpath>
+				<pathelement location="${lib}/netty-all-4.1.8.Final.jar" />
+				<pathelement location="${lib}/disruptor-3.3.0.jar" />
+				<pathelement location="${lib}/log4j-api-2.8.jar" />
+				<pathelement location="${lib}/log4j-core-2.8.jar" />
+				<pathelement location="${lib}/xpp3_min-1.1.4c.jar" />
+				<pathelement location="${lib}/xpp3-1.1.4c.jar" />
+				<pathelement location="${lib}/xstream-1.4.9.jar"/>
+				<pathelement location="${lib}/mysql-connector-java-5.1.40-bin.jar" />
+				<pathelement path="${jar}/" />
+			</classpath>
+		</java>
+	</target>
+</project>
