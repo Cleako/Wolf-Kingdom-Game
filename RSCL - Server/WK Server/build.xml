@@ -14,6 +14,7 @@
 			<pathelement path="${java.class.path}/"/>
 			<pathelement location="${lib}/log4j-api-2.8.jar" />
 			<pathelement location="${lib}/log4j-core-2.8.jar" />
+			<pathelement location="${lib}/disruptor-3.3.5.jar" />
 		  </classpath>
 		</javac>
 		<jar basedir="buildplugins" destfile="plugins.jar" />
@@ -33,6 +34,8 @@
 			<pathelement location="${lib}/xpp3-1.1.4c.jar" />
 			<pathelement location="${lib}/xstream-1.4.9.jar"/>
 			<pathelement location="${lib}/mysql-connector-java-5.1.40-bin.jar" />
+			<pathelement location="${lib}/disruptor-3.3.5.jar" />
+			<pathelement location="${lib}/*" />
 			<pathelement path="${java.class.path}/"/>
 		  </classpath>
 		</javac>
@@ -55,6 +58,8 @@
 				<pathelement location="${lib}/xpp3-1.1.4c.jar" />
 				<pathelement location="${lib}/xstream-1.4.9.jar"/>
 				<pathelement location="${lib}/mysql-connector-java-5.1.40-bin.jar" />
+				<pathelement location="${lib}/disruptor-3.3.5.jar" />
+				<pathelement location="${lib}/*" />
 				<pathelement path="${jar}/" />
 			</classpath>
 		</java>
@@ -73,6 +78,8 @@
 				<pathelement location="${lib}/xpp3-1.1.4c.jar" />
 				<pathelement location="${lib}/xstream-1.4.9.jar"/>
 				<pathelement location="${lib}/mysql-connector-java-5.1.40-bin.jar" />
+				<pathelement location="${lib}/disruptor-3.3.5.jar" />
+				<pathelement location="${lib}/*" />
 				<pathelement path="${jar}/" />
 			</classpath>
 		</java>

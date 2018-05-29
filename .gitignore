@@ -35,3 +35,8 @@ hs_err_pid*
 /RSCL - Launcher/build/
 /RSCL - WebLoader/nbproject/private/
 /website/nbproject/private/
+/WK Client Core/dist/
+/RSCL - WebLoader/build/
+/RSCL - WebLoader/dist/
+/RSCL - Server/WK Server/build/
+/RSCL - Server/WK Server/dist/
