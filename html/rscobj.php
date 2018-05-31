@@ -3,8 +3,8 @@
 define('LUNA_ROOT', dirname(__FILE__) . '/');
 
 // Databas uppkopplings konfigurationer.
-	$host = "localhost";
-	$username = "wolf";
+	$host = "127.0.0.1";
+	$username = "root";
 	$password = "malware";
 	$dbname = "wolf_kingdom";
 

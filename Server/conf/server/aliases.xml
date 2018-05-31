@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<comment>Stores aliases for the XStream engine</comment>
+
+	<entry key="Point">com.wk.server.model.Point</entry>
+	<entry key="TelePoint">com.wk.server.model.TelePoint</entry>
+
+	<entry key="Shop">com.wk.server.model.Shop</entry>
+	<entry key="InvItem">com.wk.server.model.container.Item</entry>
+
+	<entry key="CerterDef">com.wk.server.external.CerterDef</entry>
+	<entry key="CertDef">com.wk.server.external.CertDef</entry>
+
+	<entry key="GameObjectLoc">com.wk.server.external.GameObjectLoc</entry>
+	<entry key="ItemLoc">com.wk.server.external.ItemLoc</entry>
+	<entry key="NPCLoc">com.wk.server.external.NPCLoc</entry>
+
+	<entry key="TileDef">com.wk.server.external.TileDef</entry>
+	<entry key="GameObjectDef">com.wk.server.external.GameObjectDef</entry>
+	<entry key="DoorDef">com.wk.server.external.DoorDef</entry>
+	<entry key="ItemDef">com.wk.server.external.ItemDefinition</entry>
+	<entry key="PrayerDef">com.wk.server.external.PrayerDef</entry>
+	<entry key="SpellDef">com.wk.server.external.SpellDef</entry>
+	<entry key="NPCDef">com.wk.server.external.NPCDef</entry>
+
+	<entry key="ItemCraftingDef">com.wk.server.external.ItemCraftingDef</entry>
+	<entry key="ItemHerbSecond">com.wk.server.external.ItemHerbSecond</entry>
+	<entry key="ItemDartTipDef">com.wk.server.external.ItemDartTipDef</entry>
+	<entry key="ItemGemDef">com.wk.server.external.ItemGemDef</entry>
+	<entry key="ItemLogCutDef">com.wk.server.external.ItemLogCutDef</entry>
+	<entry key="ItemBowStringDef">com.wk.server.external.ItemBowStringDef</entry>
+	<entry key="ItemArrowHeadDef">com.wk.server.external.ItemArrowHeadDef</entry>
+	<entry key="FiremakingDef">com.wk.server.external.FiremakingDef</entry>
+	<entry key="ReqOreDef">com.wk.server.external.ReqOreDef</entry>
+	<entry key="ItemUnIdentHerbDef">com.wk.server.external.ItemUnIdentHerbDef</entry>
+	<entry key="ItemHerbDef">com.wk.server.external.ItemHerbDef</entry>
+	<entry key="ItemCookingDef">com.wk.server.external.ItemCookingDef</entry>
+	<entry key="ItemSmeltingDef">com.wk.server.external.ItemSmeltingDef</entry>
+	<entry key="ItemSmithingDef">com.wk.server.external.ItemSmithingDef</entry>
+	<entry key="ObjectMiningDef">com.wk.server.external.ObjectMiningDef</entry>
+	<entry key="ObjectWoodcuttingDef">com.wk.server.external.ObjectWoodcuttingDef</entry>
+	<entry key="ObjectFishingDef">com.wk.server.external.ObjectFishingDef</entry>
+	<entry key="ObjectFishDef">com.wk.server.external.ObjectFishDef</entry>
+	<entry key="ItemDropDef">com.wk.server.external.ItemDropDef</entry>
+</properties>

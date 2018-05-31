@@ -1,6 +1,6 @@
 <?php
 
-$cache_id = '55fd9fe095daa3f100ef64f2cc773a6ff18aa5db';
+$cache_id = '46a255b4bd889de3d38bf88751d48ca60f9be32f';
 if ($cache_id != generate_stopwords_cache_id()) return;
 
 define('LUNA_STOPWORDS_LOADED', 1);

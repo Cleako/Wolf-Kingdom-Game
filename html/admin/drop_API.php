@@ -22,7 +22,7 @@ $id = ctype_digit($id) ? $id : null;
 
 if (isset($action) && isset($id)) {
 
-    $pdo = new PDO('mysql:dbname=wolf_kingdom;host=localhost', 'wolf', 'malware');
+    $pdo = new PDO('mysql:dbname=wolf_kingdom;host=127.0.0.1', 'root', 'malware');
 
     if ($action === 'fetch') {
         $fetch = $pdo->prepare('

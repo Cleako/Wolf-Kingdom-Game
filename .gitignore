@@ -10,6 +10,9 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# Mac DS_Store
+.DS_Store
+
 # Package Files #
 *.jar
 *.war
@@ -20,23 +23,17 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/RSCL - Server/Server/nbproject/private/
-/RSCL - Server/Server/build/
-/RSCL - Server/Server/dist/
-/RSCL - PC_Client/nbproject/private/
-/RSCL - PC_Client/build/
-/RSCL - Client_Base/nbproject/private/
-/RSCL - Client_Base/build/
-/RSCL - Client_Base/dist/
-/WK Client Core/nbproject/private/
-/RSCL - Server/WK Server/nbproject/private/
-/RSCL - Launcher/nbproject/private/
-/RSCL - Launcher/dist/
-/RSCL - Launcher/build/
-/RSCL - WebLoader/nbproject/private/
-/website/nbproject/private/
-/WK Client Core/dist/
-/RSCL - WebLoader/build/
-/RSCL - WebLoader/dist/
-/RSCL - Server/WK Server/build/
-/RSCL - Server/WK Server/dist/
+/PC_Client/nbproject/private/
+/PC_Client/build/
+/Launcher/nbproject/private/
+/Launcher/dist/
+/Launcher/build/
+/html/nbproject/private/
+/Client/nbproject/private/
+/Client/dist/
+/WebLoader/build/
+/WebLoader/dist/
+/WebLoader/nbproject/private/
+/Server/build/
+/Server/dist/
+/Server/nbproject/private/
