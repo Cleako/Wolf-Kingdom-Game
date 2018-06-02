@@ -23,7 +23,7 @@ define('LUNA_ALLOW_INDEX', 1);
 define('LUNA_ACTIVE_PAGE', 'index');
 define('LUNA_CANONICAL_INDEX', 1);
 
-$NEWS_BOARD = 1; // Board ID.
+$NEWS_BOARD = 16; // Board ID.
 $BOARD_TOTAL = 5; // MAX news posts.
 
 $fetch_news = $db->query("SELECT 

@@ -54,13 +54,13 @@ $RENAME_PRICE = 200;
 
 /** Stat Reduction Holder **/
 $validskills = 	array(
-	0 => array(name => 'attack', modify => true),
-	1 => array(name => 'defense', modify => true),
-	2 => array(name => 'strength', modify => true),
-	3 => array(name => 'hits', modify => false),
-	4 => array(name => 'prayer', modify => true),
-	5 => array(name => 'ranged', modify => true),
-	6 => array(name => 'magic', modify => true)
+	0 => array('name' => 'attack', 'modify' => true),
+	1 => array('name' => 'defense', 'modify' => true),
+	2 => array('name' => 'strength', 'modify' => true),
+	3 => array('name' => 'hits', 'modify' => false),
+	4 => array('name' => 'prayer', 'modify' => true),
+	5 => array('name' => 'ranged', 'modify' => true),
+	6 => array('name' => 'magic', 'modify' => true)
 	);
 
 //ACHIEVEMENTS DATA

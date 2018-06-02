@@ -60,7 +60,11 @@ class GettextTranslations extends Translations
             \$index = (int) ($expression);
 
             return (\$index < $nplurals) ? \$index : $nplurals - 1;";
-        return create_function('$n', $func_body);
+        //Depreciated in PHP 7.2
+        //return create_function('$n', $func_body);
+        $callback = function() use ( $func_body ) {
+	        echo str_replace( '"', '\"', $section['desc'] );
+        };
     }
 
     /**
