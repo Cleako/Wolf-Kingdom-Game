@@ -50,7 +50,7 @@ $my_character_slots = ($luna_user['character_slots'] > $maximum_character_slots 
 $character_slots_remaining = $my_character_slots - $db->num_rows($find_chars);
 
 // Character renaming price
-$RENAME_PRICE = 200;
+//$RENAME_PRICE = 200;
 
 /** Stat Reduction Holder **/
 $validskills = 	array(
@@ -199,9 +199,9 @@ else if($setting != 'achievements') {
 					$grab_char = $db->fetch_assoc($stat_char);
 					if($grab_char['online'] == 0) 
 					{
-						$payment = $db->query("SELECT id FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($grab_char['id']) . "' AND id IN (2092, 2094)");
-						if($db->num_rows($payment) > 0)
-						{
+						//$payment = $db->query("SELECT id FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($grab_char['id']) . "' AND id IN (2092, 2094)");
+						//if($db->num_rows($payment) > 0)
+						//{
 							if(isset($_POST['reset_stat'])) 
 							{
 								$rehash_inputs = explode("," , $_POST['reset_stat']);
@@ -238,7 +238,7 @@ else if($setting != 'achievements') {
 													$db->query("UPDATE " . GAME_BASE . "experience SET exp_hits = '" . $db->escape($auto_calc_hits)  . "', exp_" . $db->escape($rehash_inputs[1]) . " = '0' WHERE playerID = '" . $db->escape($grab_char['id']) . "'");
 													$db->query("UPDATE " . GAME_BASE . "curstats SET cur_hits = '" . $db->escape($convert_calc_hits) . "', cur_" . $db->escape($rehash_inputs[1]) . " = '1' WHERE playerID = '" . $db->escape($grab_char['id']) . "'");
 													// Delete the sub card from inventory
-													$db->query("DELETE FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($grab_char['id']) . "' AND id IN (2092, 2094) LIMIT 1");
+													//$db->query("DELETE FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($grab_char['id']) . "' AND id IN (2092, 2094) LIMIT 1");
 													redirect('char_manager.php?id='.$id.'&setting=reduction&saved=true');
 												}
 											break;
@@ -246,18 +246,18 @@ else if($setting != 'achievements') {
 												 $db->query("UPDATE " . GAME_BASE . "experience SET exp_" . $db->escape($rehash_inputs[1]) . " = '0' WHERE playerID = '" . $db->escape($grab_char['id']) . "'");
 												 $db->query("UPDATE " . GAME_BASE . "curstats SET cur_" . $db->escape($rehash_inputs[1]) . " = '1' WHERE playerID = '" . $db->escape($grab_char['id']) . "'");	
 												 // Delete the sub card from inventory
-												 $db->query("DELETE FROM " . GAME_BASE . "invitems WHERE playerID = '" . $grab_char['id'] . "' AND id IN (2092, 2094) LIMIT 1");
+												 //$db->query("DELETE FROM " . GAME_BASE . "invitems WHERE playerID = '" . $grab_char['id'] . "' AND id IN (2092, 2094) LIMIT 1");
 												 redirect('char_manager.php?id='.$id.'&setting=reduction&saved=true');
 											break;
 										}
 									}
 								}
 							}
-						} 
+						/*} 
 						else 
 						{
-							$errors[] = "You need to have a Gold or Premium toke in your inventory.";
-						}
+							$errors[] = "You need to have a Gold or Premium token in your inventory.";
+						}*/
 					}
 					else 
 					{
@@ -313,9 +313,9 @@ else if($setting != 'achievements') {
 							{
 								if($check['online'] == 0) 
 								{
-									$payment = $db->query("SELECT id FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($check['id']) . "' AND id IN (2092, 2094)");
-									if($db->num_rows($payment) > 0)
-									{
+									//$payment = $db->query("SELECT id FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($check['id']) . "' AND id IN (2092, 2094)");
+									//if($db->num_rows($payment) > 0)
+									//{
 										$db->query("UPDATE " . GAME_BASE . "players SET username='" . $db->escape($new_name) . "' WHERE id ='" . $check['id'] . "'") or error('Failed to rename player username', __FILE__, __LINE__, $db->error());
 										//$db->query("UPDATE users SET jewels=jewels - ".$RENAME_PRICE." WHERE id ='" . $id . "'") or error('Failed to rename player username', __FILE__, __LINE__, $db->error());										
 										$db->query("UPDATE " . GAME_BASE . "auctions SET seller_username = '" . $db->escape($new_name) . "' WHERE seller_username='" . $current_name . "'") or die('ew13');
@@ -327,10 +327,10 @@ else if($setting != 'achievements') {
 										$db->query('INSERT INTO ' . GAME_BASE . 'name_changes (playerID, owner, old_name, new_name, date) VALUES('.intval($check['id']).', '.intval($check['owner']).', \''.$db->escape($current_name).'\',  \''.$db->escape($new_name).'\', '.time().')') or error('Unable to save character name change!', __FILE__, __LINE__, $db->error());
 										new_notification($id, 'char_manager.php?id='.$id.'', __('Character: '. luna_htmlspecialchars($current_name) . ' has been renamed to: '. luna_htmlspecialchars($new_name) . '!', 'luna'), 'fa-pencil');
 										redirect('char_manager.php?id='.$id.'&setting=character_renaming&saved=true');
-									} 
+									/*} 
 									else {
 										$errors[] = "You need to have a gold or premium token in your inventory for the purchase.";
-									}
+									}*/
 								} 
 								else 
 								{
@@ -425,9 +425,10 @@ else if($setting != 'achievements') {
 				
 				if ($key == '' || $key != $cur_user['activate_key'])
 					message(__('The specified activation key was incorrect or has expired. Please re-request a new deletion. If that fails, contact the forum administrator at', 'luna').' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.');
-				if($cur_user['jewels'] < 100) 
-					message(__('You need to have 100 jewels in order for this service. You can donate for jewels at: <a href="wolfkingdom.net/donate.php">wolfkingdom.net/donate.php</a>', 'luna').'');
-				else {
+				//No donations!
+                                //if($cur_user['jewels'] < 100) 
+				//	message(__('You need to have 100 jewels in order for this service. You can donate for jewels at: <a href="wolfkingdom.net/donate.php">wolfkingdom.net/donate.php</a>', 'luna').'');
+				//else {
 					$character_to_delete = $cur_user['activate_string'];
 					$character_to_delete_query = $db->query('SELECT username FROM ' . GAME_BASE . 'players WHERE id='.$character_to_delete) or error('Unable to fetch deletion extra', __FILE__, __LINE__, $db->error());
 					if (!$db->num_rows($character_to_delete_query)) 
@@ -451,10 +452,12 @@ else if($setting != 'achievements') {
 					$db->query("DELETE FROM " . GAME_BASE . "clan WHERE leader = '" .  $db->escape($cur_del_char['username']) . "'");
 					$db->query("DELETE FROM " . GAME_BASE . "clan_players WHERE username = '" .  $db->escape($cur_del_char['username']) . "'");
 					
-					// REMOVE TOKENS AND UPDATE THE ACTIVATION KEYS TO NULL.
-					$db->query('UPDATE '.$db->prefix.'users SET jewels=jewels - 100, activate_string=NULL, activate_key=NULL WHERE id='.$id) or error('Unable to update user defaults', __FILE__, __LINE__, $db->error());
+					// UPDATE THE ACTIVATION KEYS TO NULL.
+                                        // No donations!
+					//$db->query('UPDATE '.$db->prefix.'users SET jewels=jewels - 100, activate_string=NULL, activate_key=NULL WHERE id='.$id) or error('Unable to update user defaults', __FILE__, __LINE__, $db->error());
+                                        $db->query('UPDATE '.$db->prefix.'users SET activate_string=NULL, activate_key=NULL WHERE id='.$id) or error('Unable to update user defaults', __FILE__, __LINE__, $db->error());
 					message(__('Your character has been successfully deleted.', 'luna'), true);
-				}
+				//}
 			} else {
 				if (isset($_POST['delete_verify'])) {
 					require LUNA_ROOT.'include/email.php';
@@ -477,8 +480,6 @@ You have requested to have a game character deleted from your forum account at <
 
 Character to be deleted: <char_delete>
 
-Remember this service cost: 100 tokens, which will be withdrawn from your forum account after confirmation.
-
 To confirm the deletion of your character, please click the activation url below:
 <activation_url>
 
@@ -497,13 +498,15 @@ To confirm the deletion of your character, please click the activation url below
 					
 						// Loop through users we found
 						while ($cur_hit = $db->fetch_assoc($result)) {
-							if ($cur_hit['last_email_sent'] != '' && (time() - $cur_hit['last_email_sent']) < 3600 && (time() - $cur_hit['last_email_sent']) >= 0) {
+							//This is silly.
+                                                        /*if ($cur_hit['last_email_sent'] != '' && (time() - $cur_hit['last_email_sent']) < 3600 && (time() - $cur_hit['last_email_sent']) >= 0) {
 								message(sprintf(__('This account has already requested a character delete in the past hour. Please wait %s minutes before requesting again.', 'luna'), intval((3600 - (time() - $cur_hit['last_email_sent'])) / 60)), true);
-							}
-							
-							if($cur_hit['jewels'] < 100) {
-								message(__('This service cost 100 jewels, you can donate for more jewels at: <a href="http://wolfkingdom.net/donate.php">wolfkingdom.net/donate.php</a>', 'luna'));
-							}
+							}*/
+                                                        
+							//No donations!
+							//if($cur_hit['jewels'] < 100) {
+							//	message(__('This service cost 100 jewels, you can donate for more jewels at: <a href="http://wolfkingdom.net/donate.php">wolfkingdom.net/donate.php</a>', 'luna'));
+							//}
 							
 							$activation_key = random_pass(8);
 
@@ -516,8 +519,9 @@ To confirm the deletion of your character, please click the activation url below
 							$cur_mail_message = str_replace('<char_delete>', $char_delete['username'], $cur_mail_message);
 
 							luna_mail($luna_user['email'], $mail_subject, $cur_mail_message);
+                                                        //message(__('neat'), true);
 						}
-						message(__('An email has been sent to the forum account email address with instructions on how to delete the selected character. If it does not arrive you can contact the forum administrator at', 'luna').' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
+						//message(__('An email has been sent to the forum account email address with instructions on how to delete the selected character. If it does not arrive you can contact the forum administrator at', 'luna').' <a href="mailto:'.luna_htmlspecialchars($luna_config['o_admin_email']).'">'.luna_htmlspecialchars($luna_config['o_admin_email']).'</a>.', true);
 					}
 				}
 			}

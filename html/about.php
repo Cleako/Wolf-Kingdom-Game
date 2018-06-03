@@ -106,13 +106,13 @@ $find_staff = $db->query('SELECT u.group_id, u.id, u.username, u.title, u.num_co
 						<div class="panel panel-default ">
 							<div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
 								 <h4 class="panel-title">
-									<a href="#rscl-faqs" class="ing">Q: How can I support RSCLegacy?</a>
+									<a href="#rscl-faqs" class="ing">Q: How can I support development?</a>
 								</h4>
 							</div>
 							<div id="question5" class="panel-collapse collapse" style="height: 0px;">
 								<div class="panel-body">
 									<h5><span class="label label-rscl">Answer</span></h5>
-									<p>You can either buy cosmetics from the shop or subscriptions. We also have a donate button if you simply want to support us for the hard work without receiving something in return!</p>
+									<p>Just simply enjoy the game and tell everyone else to come play it! If you know how to program, we could use the help.</p>
 								</div>
 							</div>
 						</div>
@@ -192,7 +192,7 @@ $find_staff = $db->query('SELECT u.group_id, u.id, u.username, u.title, u.num_co
 							<div id="question11" class="panel-collapse collapse" style="height: 0px;">
 								<div class="panel-body">
 									<h5><span class="label label-rscl">Answer</span></h5>
-									<p>As many as you want with a limit of 6 characters per forum account. It is possible to buy more character slots with <a href="donate.php">Jewels</a>.</p>
+									<p>As many as you want with a limit of 6 characters per forum account.</p>
 								</div>
 							</div>
 						</div>

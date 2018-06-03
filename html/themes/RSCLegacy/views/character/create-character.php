@@ -16,7 +16,17 @@ if (!defined('FORUM'))
 	<div class="panel-body">
 		<div class="select_character">
 			<div class="char_box">
-			<?php if(count($errors) > 0) { ?>
+			<?php 
+                        //Corrected issue with depreciation in PHP 7.2
+                        //if(count($errors) > 0) { 
+                        function counting($errors) {
+                            if($errors === null) return 0; 
+                            if(is_array($errors)) return count($errors); 
+                            if(is_object($errors) && $errors instanceof \Countable) return count($errors);
+                                return 1;
+                        }
+                        if(counting($errors) > 0) {
+                        ?>
 			<div class="alert alert-dismissable alert-info alert-danger">
 				<button type="button" class="close" data-dismiss="alert">&#10006;</button>
 				<h4>Error!</h4>
@@ -30,7 +40,11 @@ if (!defined('FORUM'))
 				?>
 				</ul>
 			</div>
-			<?php } else if(isset($_GET['saved']) && count($errors) == 0) { ?>
+			<?php 
+                        } 
+                        else 
+                            if(isset($_GET['saved']) && counting($errors) == 0) 
+                        { ?>
 			<div class="alert alert-dismissable alert-info alert-info">
 				<?php
 				echo "<strong>Congratulations! Account successfully created.</strong>";

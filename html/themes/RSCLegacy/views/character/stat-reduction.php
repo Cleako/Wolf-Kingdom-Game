@@ -10,19 +10,29 @@ if (!defined('FORUM'))
 		<h2 class="content-header-title">Stat reduction</h2>
 	</div>
 	<div class="embended-info">
-		<p>
+		<!--<p>
 		This tool can reset one combat stat of your choice. By using either Gold or Premium token.
-		</p>
+		</p>-->
 		<p><strong>Stat Reset:</strong></p>
-		<p>- One Gold or Premium Token.</p>
+		<!--<p>- One Gold or Premium Token.</p>
 		<p>- Resets a stat below 20. IE: Defense level 19 lowered to 1.</p>
 		<br />
-		<p>Select the reset type and make sure you have your token in your characters inventory during the process.</p>
+		<p>Select the reset type and make sure you have your token in your characters inventory during the process.</p>-->
 	</div>
 	<div class="panel-body">
 		<div class="select_character">
 			<div class="char_box">
-			<?php if(count($errors) > 0) { ?>
+			<?php 
+                        //Corrected issue with depreciation in PHP 7.2
+                        //if(count($errors) > 0) { 
+                        function counting($errors) {
+                            if($errors === null) return 0; 
+                            if(is_array($errors)) return count($errors); 
+                            if(is_object($errors) && $errors instanceof \Countable) return count($errors);
+                                return 1;
+                        }
+                        if(counting($errors) > 0) {
+                        ?>
 			<div class="alert alert-dismissable alert-info alert-danger">
 				<button type="button" class="close" data-dismiss="alert">&#10006;</button>
 				<h4>Error!</h4>
@@ -36,7 +46,7 @@ if (!defined('FORUM'))
 				?>
 				</ul>
 			</div>
-			<?php } else if(isset($_GET['saved']) && count($errors) == 0) { ?>
+			<?php } else if(isset($_GET['saved']) && counting($errors) == 0) { ?>
 			<div class="alert alert-dismissable alert-info alert-info">
 				<?php
 				echo "<strong>Stat reset successful!</strong>";
@@ -49,12 +59,12 @@ if (!defined('FORUM'))
 				" . GAME_BASE . "experience.exp_prayer, " . GAME_BASE . "experience.exp_ranged, " . GAME_BASE . "experience.exp_magic 
 				FROM " . GAME_BASE . "players JOIN " . GAME_BASE . "experience ON " . GAME_BASE . "players.id = " . GAME_BASE . "experience.playerID  WHERE " . GAME_BASE . "players.id = '" . $db->escape($curr_char) . "' AND " . GAME_BASE . "players.owner = '" . $id . "'");
 
-			$inv_info = $db->query("SELECT id FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($curr_char) . "' AND id IN (2092, 2094)");
+			//$inv_info = $db->query("SELECT id FROM " . GAME_BASE . "invitems WHERE playerID = '" . $db->escape($curr_char) . "' AND id IN (2092, 2094)");
 			if($db->num_rows($grab_char) > 0) 
 			{
 				$fetch = $db->fetch_assoc($grab_char);	
-				if($db->num_rows($inv_info) > 0) 
-				{
+				//if($db->num_rows($inv_info) > 0) 
+				//{
 				?>
 				<form method="post" class="form-horizontal" action="char_manager.php?id=<?php echo $id;?>&amp;setting=reduction">
 					<table class='table table-bordered'>
@@ -95,11 +105,11 @@ if (!defined('FORUM'))
 					</div>
 					</form>
 					<?php 
-				} 
+				/*} 
 				else 
 				{
 					echo "<span class='label label-danger'>You need to have a Gold or Premium token in your inventory.</span><div class='spacer'></div>";
-				}
+				}*/
 			}
 			?>
 			<hr class="draw-line" />
