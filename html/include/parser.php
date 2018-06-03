@@ -722,7 +722,13 @@ function do_bbcode($text, $is_signature = false) {
 	$text = preg_replace($pattern, $replace, $text);
 	$count = count($pattern_callback);
 	for($i = 0 ; $i < $count ; $i++) {
-		$text = preg_replace_callback($pattern_callback[$i], create_function('$matches', 'return '.$replace_callback[$i].';'), $text);
+		$text = preg_replace_callback($pattern_callback[$i], 
+		//Replaced create_function due to being depreciated in PHP 7.2
+		//create_function('$matches', 'return '.$replace_callback[$i].';'), 
+		function ($matches) {
+        	return $replace_callback[$i];
+        }, $text);
+		//$text);
 	}
 	return $text;
 }

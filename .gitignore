@@ -37,3 +37,6 @@ hs_err_pid*
 /Server/build/
 /Server/dist/
 /Server/nbproject/private/
+
+# board cache
+/html/cache/*.php
