@@ -1,42 +1,22 @@
-# Compiled class file
+#ant specific
+*/dist/
+*/build/
+
+#netbeans specific
+core
+*/nbproject/*
+!nbproject/project.properties
+!nbproject/project.xml
+
+#java specific
 *.class
 
-# Log file
+#general swap/backup files
+*.so
 *.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Mac DS_Store
-.DS_Store
-
-# Package Files #
-# *.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-/PC_Client/nbproject/private/
-/PC_Client/build/
-/Launcher/nbproject/private/
-/Launcher/dist/
-/Launcher/build/
-/html/nbproject/private/
-/Client/nbproject/private/
-/Client/dist/
-/WebLoader/build/
-/WebLoader/dist/
-/WebLoader/nbproject/private/
-/Server/build/
-/Server/dist/
-/Server/nbproject/private/
-
-# board cache
-/html/cache/*.php
+*.out
+*~
+*.swp
+*.DS_Store
+*.lock
+*.svn

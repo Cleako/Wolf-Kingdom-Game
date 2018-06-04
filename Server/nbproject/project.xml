@@ -4,7 +4,6 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>WK Server</name>
-            <explicit-platform explicit-source-supported="true"/>
             <source-roots>
                 <root id="src.plugins.dir"/>
                 <root id="src.src.dir"/>
