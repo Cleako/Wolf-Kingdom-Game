@@ -20,3 +20,8 @@ core
 *.DS_Store
 *.lock
 *.svn
+
+Server/avatars/*.png
+Server/core\.jar
+
+Server/plugins\.jar
